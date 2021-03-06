@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary-color: rgb(0, 255, 251);
+    --secondary-color: gold ;
+    --tertiary-color: green ;
+    --quaternary-color: red ;
+    --font-primary: proxima nova, 'Times New Roman', Times, Serif;
+    --font-secontdary: Verdana, Geneva, Tahoma, sans-serif;
+    --pane-padding: 5px 42px;
+}
+
+a {
+    text-decoration: none;
+    color: var "gold";
+}
+
+
+header {
+    padding: 35px, 35px, 20px, 0px;
+    background: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-size: 40px;
+    padding: 5px, 50px;
+
+}
+
+header nav {
+    margin: 15px;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0px;
+}
+
+header nav ul li a{
+    font-size: 20px;
+    padding: 5px, 15px;
+    font-family: var(--font-secontdary);
+    border-bottom: 2px solid var(--primary-color);
+    border-radius: 15px
+}
+
+header nav ul li a:hover {
+    border-radius: 15px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+}
+
+.container-title {
+    width: 25%;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: var(--font-primary);
+    border-right: solid black 4px;
+    border-radius: 15px;
+    text-align: right;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+.container-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-content p {
+    width: 70%;
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: var(--font-secondary);
+}
+
+/* about me styling */
+.about-picture {
+    background-image: url(../../assets/css/images/austin-pic.png);
+    background-size: cover;
+    height: 300px;
+    width: 230px;
+    border-radius: 5px;
+}
+
+.about-picture:hover {
+    margin: 30px 0;
+    
+}
+
+/* My Work styling*/
+.grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.grid-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(3, 175px);
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+}
+
+.project-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.project-image {
+    border: 4px solid var(--primary-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--tertiary-color);
+}
+
+.snapshot {
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+.snapshot:hover {
+    opacity: 1;
+}
+
+.description {
+    position: absolute;
+    width: 100px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background: var(--primary-color);
+    border-radius: 0 15px 15px 0;
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+.description h3 {
+    font-size: 14px;
+    font-family: var(--font-primary);
+}
+
+.description p {
+    font-size: 10px;
+    font-family: var(--font-secondary);
+}
+
+/* contact me styling */
+.contact {
+    align-content: center;
+    font-family: var(--font-secondary);
+    font-weight: 18px;
+}
+
+.contact a {
+    padding: 10px;
+    border-left: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+.contact a:hover {
+    background: var(--primary-color);
+    transition: 0.5s;
+}
+
+
+/* footer styling */
+footer {
+    height: 60px;
+    border-top: 4px solid var(--quaternary-color);
+    background: var(--tertiary-color);
+    text-align: center;
+}
+
+footer div {
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+/* media queries */
+@media screen and (max-width: 1292px) {
+    .container-content {
+        display: inline;
+    }
+
+    .container-content p {
+        width: 100%;
+    }
+
+    .about-picture {
+        float: left;
+        margin-right: 15px;
+    }
+
+    .contact {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1028px) {
+    header  {
+        padding-bottom: 0;
+        position: relative;
+        justify-content: center;
+    }
+    
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .grid-layout {
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(4, 100px);
+    }
+
+    .snapshot {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 15px;
+    }
+    .container {
+        display: inline;
+    }
+
+    .container-title {
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        border-bottom: solid black 4px;
+        margin: 20px 0;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+
+    .contact {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header nav ul {
+        justify-content: space-around;
+    }
+    
+    header nav ul li a {
+        margin-top: 10px;
+    }
+}
